@@ -162,7 +162,7 @@ function SetUpBank(){ // mise en place de la proposition du banquier + renvoie l
 
     let percent;
     if(Math.random() >0.33){
-        percent = Math.random() * (35 - 20) + 20; // pourcentage entre 35 et 45
+        percent = Math.random() * (35 - 20) + 20; // pourcentage entre 20 et 35
         document.getElementById('img-bank').src = "Assets/Bank.svg";
     }
     else{
@@ -171,7 +171,7 @@ function SetUpBank(){ // mise en place de la proposition du banquier + renvoie l
     }
 
     lastOffer = parseInt(esperence * (percent/100));
-
+    console.log(lastOffer);
     document.getElementById('bank-dialog').innerHTML = `
     Je te propose de t'offrir de l'argent en échange de la fin de la partie...<br><br>
     Accepterais tu de partir avec cette somme ?<br><br>
@@ -255,5 +255,8 @@ function refresh(){
 }
 
 function getRealValue(str){
+    if(typeof str != "string")
+        str = toString(str);
+    //console.log(str);
     return parseInt(str.replace(' ','').replace('M','000000'));
 }
