@@ -187,14 +187,14 @@ function launchGame(){
 }
 
 function getTicketValue(ticketDiv){ // retourne la valeur en int d'un ticket
-    return parseInt(ticketDiv.id.replace(' ','').replace('M','000000'));
+    return getRealValue(ticketDiv.id);
 }
 
 function EndWith(amount = null){
     if(amount == null)
         amount = lastOffer;
 
-    if(amount >= 50000){ // gros prix
+    if(getRealValue(amount) >= 50000){ // gros prix
         document.getElementById('bank-dialog').innerHTML = `
         Tiens, prends donc ces
         <p class='green'><b>`+ amount +` €</b></p>
@@ -252,4 +252,8 @@ function PrepareEndChoice(){
 
 function refresh(){
     location.reload();
+}
+
+function getRealValue(str){
+    return parseInt(str.replace(' ','').replace('M','000000'));
 }
