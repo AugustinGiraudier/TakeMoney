@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="patterns.js"></script>
+    <script src="game.js"></script>
+    <title>Prends ou Laisse</title>
+    <link rel="icon" type="image/png" href="Assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body onload="start()">
+    
+<img id="enTete" src="Assets/enTete.svg" alt="">
+
+<div id="MainSpace">
+
+    <div id="leftSpace">
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+    </div>
+
+    <div id="midleSpace">
+
+
+        <!-- Grand billet de valeur perdue -->
+        <div id="pop-up" class="invisible">
+            <img id="billetVide" src="Assets/billetVide.svg" alt="">
+            <p id="txtBilletVide">100 000 €</p>
+            <img class="btn grow btnOk" onclick="step()" src="Assets/btnOk.svg" alt="">
+        </div>
+
+        <!-- Banquier -->
+        <div id="bank">
+            <div class="align-center">
+                <div id="bank-content">
+                    <img id="img-bank" src="Assets/BankGentil.svg" alt="">
+                    <p id="bank-dialog" class="dialog">
+                        <b>Bienvenue !</b> <br><br>
+                        Ce que tu vois sur les cotés, ce sont les prix qui te sont possibles de gagner ! <br><br>
+                        Retourne les billets un par un afin de verifier ce qu'ils contiennent et je t'offrirai le dernier. <br><br>
+                        Bien sûr, je pourrai aussi te faire des propositions en cours de jeu !
+                    </p>
+                </div>
+                <img class="btn grow btnOk" id="btn-start" onclick="launchGame()" src="Assets/btnStart.svg" alt="">
+                <div class="invisible" id="bank-prop" style="width: 100%;">
+                    <div class="container">
+                        <img class="btn grow btnOk" onclick="EndWith()" src="Assets/btnOk.svg" alt="">
+                        <img class="btn grow btnOk" onclick="changeView()" src="Assets/btnNon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Billets restants a retourner -->
+        <div id="billets" class="invisible">
+            
+            <div class="tab-line">
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+            </div>
+            <div class="tab-line">
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+            </div>
+            <div class="tab-line">
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+            </div>
+            <div class="tab-line">
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+            </div>
+            <div class="tab-line">
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+            </div>
+            <div class="tab-line">
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+                <div class="billet"></div>
+            </div>
+            <div class="div-btn">
+                <img class="btn grow" src="Assets/btnOpen.svg" onclick="validate()">
+            </div>
+        </div>
+    </div>
+
+    <div id="rightSpace">
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+    </div>
+
+</div>
+
+</body>
+
+<footer>
+    <div id="line"></div>
+    <div class="div-btn">
+        <img id="footer-text" src="Assets/footer.svg">
+    </div>
+</footer>
+
+</html>

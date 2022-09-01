@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1218 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-3259.96,-6961.85)">
+        <g transform="matrix(1,0,0,1.39434,-1271.86,-1433.15)">
+            <g transform="matrix(1,0,0,0.717184,1552.51,924.395)">
+                <path d="M4196.68,7180.84C4196.68,7139.57 4163.18,7106.07 4121.91,7106.07L3054.08,7106.07C3012.81,7106.07 2979.31,7139.57 2979.31,7180.84L2979.31,7330.39C2979.31,7371.66 3012.81,7405.17 3054.08,7405.17L4121.91,7405.17C4163.18,7405.17 4196.68,7371.66 4196.68,7330.39L4196.68,7180.84Z" style="fill:rgb(31,157,141);"/>
+                <clipPath id="_clip1">
+                    <path d="M4196.68,7180.84C4196.68,7139.57 4163.18,7106.07 4121.91,7106.07L3054.08,7106.07C3012.81,7106.07 2979.31,7139.57 2979.31,7180.84L2979.31,7330.39C2979.31,7371.66 3012.81,7405.17 3054.08,7405.17L4121.91,7405.17C4163.18,7405.17 4196.68,7371.66 4196.68,7330.39L4196.68,7180.84Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1,0,0,1,57.1972,376.289)">
+                        <text x="3193.6px" y="6940px" style="font-family:'LEMONMILK-Bold', 'LEMON MILK';font-weight:700;font-size:154.167px;fill:white;">Ouvrir</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

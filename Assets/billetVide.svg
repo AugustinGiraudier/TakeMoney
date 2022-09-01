@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1613 767" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-3400.14,-7148.32)">
+        <g transform="matrix(1,0,0,1.39434,-934.033,-1451.53)">
+            <g transform="matrix(3.50975,-9.43615e-17,-2.153e-16,2.51714,-10452.9,-3380.54)">
+                <rect x="4213.15" y="3793.28" width="459.485" height="218.465" style="fill:rgb(127,202,193);"/>
+                <clipPath id="_clip1">
+                    <rect x="4213.15" y="3793.28" width="459.485" height="218.465"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1.17297,0,0,1.17297,-732.919,-672.387)">
+                        <circle cx="4216.69" cy="3807.14" r="59.611" style="fill:rgb(79,113,109);"/>
+                    </g>
+                    <g transform="matrix(1.17297,0,0,1.17297,-273.433,-672.387)">
+                        <circle cx="4216.69" cy="3807.14" r="59.611" style="fill:rgb(79,113,109);"/>
+                    </g>
+                    <g transform="matrix(1.17297,0,0,1.17297,-273.433,-453.922)">
+                        <circle cx="4216.69" cy="3807.14" r="59.611" style="fill:rgb(79,113,109);"/>
+                    </g>
+                    <g transform="matrix(1.17297,0,0,1.17297,-732.919,-453.922)">
+                        <circle cx="4216.69" cy="3807.14" r="59.611" style="fill:rgb(79,113,109);"/>
+                    </g>
+                    <path d="M4672.64,3793.28L4213.15,3793.28L4213.15,4011.75L4672.64,4011.75L4672.64,3793.28ZM4653.61,3812.3L4653.61,3992.73C4653.61,3992.73 4232.17,3992.73 4232.17,3992.73C4232.17,3992.73 4232.17,3812.3 4232.17,3812.3C4316.63,3812.3 4653.61,3812.3 4653.61,3812.3L4653.61,3812.3Z" style="fill:rgb(79,113,109);"/>
+                    <g transform="matrix(0.28492,1.0681e-17,1.7478e-17,0.28492,3216.11,1761.69)">
+                        <text x="4006.47px" y="7791.44px" style="font-family:'LEMONMILK-Bold', 'LEMON MILK';font-weight:700;font-size:691.667px;fill:rgb(121,190,182);">€</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
