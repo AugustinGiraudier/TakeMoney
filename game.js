@@ -26,10 +26,11 @@ var prices=[
 ]
 var selected = null;
 var ticketList;
+var billetList;
 var lastOffer = 0;
 
 function start(){
-    let billetList = document.getElementsByClassName("billet");
+    billetList = document.getElementsByClassName("billet");
     let cpt=1;
     for (let item of billetList) {
         item.innerHTML = getBillet(cpt);
@@ -55,10 +56,11 @@ function startGame(){
 
     // shuffle the prices
     prices.sort(() => (Math.random() > .5) ? 1 : -1);
+    console.log(prices);
 }
 
 function select(billet){
-    if(billet.classList.contains('billet')){
+    if(billet.classList.contains('billet') || billet.classList.contains('billet-end')){
         if(selected != null)
             selected.classList.remove('selected');
         selected = billet;
@@ -70,9 +72,22 @@ function getTicketPrice(ticketNumber){
     return prices[ticketNumber-1];
 }
 
-function validate(){
+function validate(end=false){
     if(selected == null)
         return;
+
+    if(end)
+        for(elem of billetList)
+            if((!elem.classList.contains('billetDis')) && elem.id != selected.id){
+                lastOffer = getTicketPrice(selected.id);
+                document.getElementById('txtBilletVide').innerHTML = getTicketPrice(selected.id);
+                selected = elem;
+                hide(getTicketPrice(selected.id));
+                changeView('pop-up');
+                selected=null;
+                return;
+            }
+
     selected.innerHTML = getDisBillet();
     selected.classList.add('billetDis');
     selected.classList.remove('billet');
@@ -89,12 +104,16 @@ function changeView(name){
     document.getElementById('pop-up').classList.add('invisible');
     document.getElementById('billets').classList.add('invisible');
     document.getElementById('bank').classList.add('invisible');
+    document.getElementById('endChoice').classList.add('invisible');
     switch (name) {
         case "bank":
             document.getElementById('bank').classList.remove('invisible');
             break;
         case "pop-up":
             document.getElementById('pop-up').classList.remove('invisible');
+            break;
+        case 'endChoice':
+            document.getElementById('endChoice').classList.remove('invisible');
             break;
         default:
             document.getElementById('billets').classList.remove('invisible');
@@ -112,12 +131,13 @@ function hide(value){
 }
 
 function step(){
+    if(SetUpBank()==2){
+        PrepareEndChoice();
+        changeView('endChoice');
+        return;
+    }
     let rd = Math.random();
     if(rd > 0.75){ // une chance sur 4 de faire une proposition
-        if(SetUpBank()==2){
-            // prepare endchoice
-            //changeView('endChoice');
-        }
         changeView('bank');
         return;
     }
@@ -142,11 +162,11 @@ function SetUpBank(){ // mise en place de la proposition du banquier + renvoie l
 
     let percent;
     if(Math.random() >0.33){
-        percent = Math.random() * (45 - 35) + 35; // pourcentage entre 35 et 45
+        percent = Math.random() * (35 - 20) + 20; // pourcentage entre 35 et 45
         document.getElementById('img-bank').src = "Assets/Bank.svg";
     }
     else{
-        percent = 10; // pourcentage de 18
+        percent = 8; // pourcentage de 18
         document.getElementById('img-bank').src = "Assets/BankMiel.svg";
     }
 
@@ -174,7 +194,7 @@ function EndWith(amount = null){
     if(amount == null)
         amount = lastOffer;
 
-    if(amount > 99000){ // gros prix
+    if(amount >= 50000){ // gros prix
         document.getElementById('bank-dialog').innerHTML = `
         Tiens, prends donc ces
         <p class='green'><b>`+ amount +` €</b></p>
@@ -187,9 +207,49 @@ function EndWith(amount = null){
         <p class='green'><b>`+ amount +` €</b></p>
         Au plaisir de te revoir !`;
         document.getElementById('img-bank').src = "Assets/BankGentil.svg";
+        document.getElementById('btn-replay').classList.remove('invisible');
     }
 
 
     document.getElementById('bank-prop').classList.add('invisible');
     changeView('bank');
+}
+
+function PrepareEndChoice(){
+    let billet1;
+    let billet2;
+
+    for (let element of billetList) {
+        if(!element.classList.contains('billetDis')){
+            if(billet1 == null)
+                billet1 = element;
+            else{
+                billet2 = element;
+                break;
+            }
+        }
+    }
+
+    let bills = document.getElementsByClassName('billet-end');
+    bills[0].innerHTML = getBillet(billet1.id);
+    bills[0].id = billet1.id;
+    bills[1].innerHTML = getBillet(billet2.id);
+    bills[1].id = billet2.id;
+
+    document.getElementById('btn-continue').onclick = null;
+    document.getElementById('btn-continue').addEventListener('click', event => {
+        EndWith();
+    });
+
+
+    bills[0].addEventListener('click', event => {
+        select(bills[0]);
+      });
+    bills[1].addEventListener('click', event => {
+        select(bills[1]);
+    });
+}
+
+function refresh(){
+    location.reload();
 }

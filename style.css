@@ -8,6 +8,11 @@ p{
     font-size: 3em;
     color: #4F716D;
 }
+.title{
+    font-family: 'Lemon/Milk', sans-serif;
+    font-size: 1.6em;
+    color: white;
+}
 #enTete{
     margin-top: 50px;
 }
@@ -29,7 +34,12 @@ p{
     width: 150px;
     height: 72px;
 }
-.billet:hover { 
+.billet-end{
+    margin: 5px 10px;
+    width: 250px;
+    height: 120px;
+}
+.billet:hover, .billet-end:hover { 
     cursor: pointer;
 }
 .ticket{
